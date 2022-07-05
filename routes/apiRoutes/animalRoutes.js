@@ -10,7 +10,7 @@ router.get('/animals', (req, res) => {
     res.json(results);
   });
 
-  router.get('/animals/:id', (req, res) => {
+router.get('/animals/:id', (req, res) => {
     const result = findById(req.params.id, animals);
     if (result) {
       res.json(result);
@@ -19,7 +19,7 @@ router.get('/animals', (req, res) => {
     }
   });
 
-  router.post('/animals', (req, res) => {
+router.post('/animals', (req, res) => {
     // set id based on what the next index of the array will be
     req.body.id = animals.length.toString();
 
